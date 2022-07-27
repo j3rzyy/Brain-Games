@@ -1,0 +1,23 @@
+{
+  "name": "brain-games",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "start": "node brain-games.js"
+  },
+  "author": "j3rzyy",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
