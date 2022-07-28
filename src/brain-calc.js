@@ -1,10 +1,12 @@
 import redlineSync from 'readline-sync';
 import { repeatsToWin } from '../src/brain-even.js';
 import { getRandomNum } from '../src/brain-even.js';
-S
+import { maxValue } from '../src/brain-even.js';
+import { minValue } from '../src/brain-even.js';
+
 const getTrueAnswer = (firstMember, secondMember) => {
   const totalSign = 4;
-  switch (getRandomNum(totalSign)) {
+  switch (getRandomNum(0, totalSign)) {
     case 0:
       console.log(`Question: ${firstMember} + ${secondMember}`);
       return firstMember + secondMember;
@@ -24,10 +26,9 @@ const getTrueAnswer = (firstMember, secondMember) => {
 
 export const brainCalc = () => {
   console.log('What is the result of the expression?');
-  const maxValue = 10; // максимально возможное псч
   for (let i = 0; i < repeatsToWin;) {
-    const firstMember = getRandomNum(maxValue); // первый член выражения
-    const secondMember = getRandomNum(maxValue); // второй член выражения
+    const firstMember = getRandomNum(minValue, maxValue); // первый член выражения
+    const secondMember = getRandomNum(minValue, maxValue); // второй член выражения
     const trueAnswer = getTrueAnswer(firstMember, secondMember);
     const userAnswer = redlineSync.question('Your answer: ');
     if (Number(userAnswer) === trueAnswer) {

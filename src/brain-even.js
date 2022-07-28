@@ -1,7 +1,14 @@
 import redlineSync from 'readline-sync';
 
-export const getRandomNum = (max) => Math.floor(Math.random() * max); // генератор случайных чисел
+export const getRandomNum = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
 export const repeatsToWin = 2; // колличество повторов до победы
+export const maxValue = 100;
+export const minValue = 0;
 
 const isEven = (number) => {
   if (number % 2 === 0)
@@ -13,7 +20,7 @@ export const brainEven = () => {
   console.log("Answer 'yes' if number even otherwise answer 'no'.");
   const maxValue = 100; // ограничение значения максимально возможного рандомного числа
   for (let i = 0; i < repeatsToWin;) {
-    const randomNum = getRandomNum(maxValue); // получение рандомного числа (с огрничением maxValue)
+    const randomNum = getRandomNum(minValue, maxValue); // получение рандомного числа
     console.log(`Question: ${randomNum}`); // вывод рандомного числа тип которого необходимо определить
     // const userAnswer = redlineSync.question('Your answer: ')
     // запрос ответа от пользователя БЕЗ проверки ввода
