@@ -1,8 +1,10 @@
 import redlineSync from 'readline-sync';
-import { repeatsToWin } from '../src/brain-even.js';
-import { getRandomNum } from '../src/brain-even.js';
-import { maxValue } from '../src/brain-even.js';
-import { minValue } from '../src/brain-even.js';
+import {
+  repeatsToWin,
+  getRandomNum,
+  maxValue,
+  minValue,
+} from '../src/brain-even.js';
 
 const getTrueAnswer = (firstMember, secondMember) => {
   const totalSign = 4;
@@ -15,7 +17,7 @@ const getTrueAnswer = (firstMember, secondMember) => {
       return firstMember - secondMember;
     case 2:
       console.log(`Question: ${firstMember} * ${secondMember}`);
-      return firstMember + secondMember;
+      return firstMember * secondMember;
     case 3:
       console.log(`Question: ${firstMember} % ${secondMember}`);
       return firstMember % secondMember;

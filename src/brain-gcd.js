@@ -1,8 +1,10 @@
 import redlineSync from 'readline-sync';
-import { repeatsToWin } from '../src/brain-even.js';
-import { getRandomNum } from '../src/brain-even.js';
-import { maxValue } from '../src/brain-even.js';
-import { minValue } from '../src/brain-even.js';
+import {
+  repeatsToWin,
+  getRandomNum,
+  maxValue,
+  minValue,
+} from '../src/brain-even.js';
 
 const getTrueAnswer = (firstVal, secondVal) => { // функция находит НОД двух чисел
   if (secondVal > firstVal) return getTrueAnswer(secondVal, firstVal);

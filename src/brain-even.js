@@ -7,18 +7,18 @@ export const getRandomNum = (min, max) => {
 };
 
 export const repeatsToWin = 2; // колличество повторов до победы
-export const maxValue = 100;
+export const maxValue = 100; // ограничение значения максимально возможного рандомного числа
 export const minValue = 0;
 
 const isEven = (number) => {
-  if (number % 2 === 0)
-    return 'yes'
+  if (number % 2 === 0) {
+    return 'yes';
+  }
   return 'no';
 }; // функция проверки на четность, возвращает true = 'yes', false = 'no'
 
 export const brainEven = () => {
   console.log("Answer 'yes' if number even otherwise answer 'no'.");
-  const maxValue = 100; // ограничение значения максимально возможного рандомного числа
   let i = 0;
   while (i < repeatsToWin) {
     const randomNum = getRandomNum(minValue, maxValue); // получение рандомного числа
