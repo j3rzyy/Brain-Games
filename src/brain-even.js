@@ -19,7 +19,8 @@ const isEven = (number) => {
 export const brainEven = () => {
   console.log("Answer 'yes' if number even otherwise answer 'no'.");
   const maxValue = 100; // ограничение значения максимально возможного рандомного числа
-  for (let i = 0; i < repeatsToWin;) {
+  let i = 0;
+  while (i < repeatsToWin) {
     const randomNum = getRandomNum(minValue, maxValue); // получение рандомного числа
     console.log(`Question: ${randomNum}`); // вывод рандомного числа тип которого необходимо определить
     // const userAnswer = redlineSync.question('Your answer: ')

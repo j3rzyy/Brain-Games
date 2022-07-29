@@ -26,7 +26,8 @@ const getTrueAnswer = (firstMember, secondMember) => {
 
 export const brainCalc = () => {
   console.log('What is the result of the expression?');
-  for (let i = 0; i < repeatsToWin;) {
+  let i = 0;
+  while (i < repeatsToWin) {
     const firstMember = getRandomNum(minValue, maxValue); // первый член выражения
     const secondMember = getRandomNum(minValue, maxValue); // второй член выражения
     const trueAnswer = getTrueAnswer(firstMember, secondMember);

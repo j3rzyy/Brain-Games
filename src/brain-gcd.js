@@ -11,7 +11,8 @@ const getTrueAnswer = (firstVal, secondVal) => { // функция находи�
 };
 
 export const getGCD = () => {
-  for (let i = 0; i < repeatsToWin;) {
+  let i = 0;
+  while (i < repeatsToWin) {
     console.log('Find the greatest common divisor of given numbers.');
     const firstValue = getRandomNum(minValue, maxValue); // получение первого числа через функцию
     const secondValue = getRandomNum(minValue, maxValue); // получение второго числа для НОД
