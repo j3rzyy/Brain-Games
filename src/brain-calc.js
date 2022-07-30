@@ -7,7 +7,8 @@ import {
 } from '../src/brain-even.js';
 
 const getTrueAnswer = (firstMember, secondMember) => {
-  const totalSign = 4;
+  const totalSign = 4; // каждая цифра соответсвует мат.действию (+, -, *, %)
+  // const possibleActions = ['+', '-', '*', '%']
   switch (getRandomNum(0, totalSign)) {
     case 0:
       console.log(`Question: ${firstMember} + ${secondMember}`);
