@@ -6,25 +6,10 @@ import {
   minValue,
 } from '../src/brain-even.js';
 
-const getTrueAnswer = (firstMember, secondMember) => {
+const getRandomSign = () => {
   const totalSign = 4; // каждая цифра соответсвует мат.действию (+, -, *, %)
-  // const possibleActions = ['+', '-', '*', '%']
-  switch (getRandomNum(0, totalSign)) {
-    case 0:
-      console.log(`Question: ${firstMember} + ${secondMember}`);
-      return firstMember + secondMember;
-    case 1:
-      console.log(`Question: ${firstMember} - ${secondMember}`);
-      return firstMember - secondMember;
-    case 2:
-      console.log(`Question: ${firstMember} * ${secondMember}`);
-      return firstMember * secondMember;
-    case 3:
-      console.log(`Question: ${firstMember} % ${secondMember}`);
-      return firstMember % secondMember;
-    default:
-      return 0;
-  }
+  const possibleActions = ['+', '-', '*', '%'];
+  return possibleActions[getRandomNum(0, totalSign)];
 };
 
 export const brainCalc = () => {
@@ -33,14 +18,15 @@ export const brainCalc = () => {
   while (i < repeatsToWin) {
     const firstMember = getRandomNum(minValue, maxValue); // первый член выражения
     const secondMember = getRandomNum(minValue, maxValue); // второй член выражения
-    const trueAnswer = getTrueAnswer(firstMember, secondMember);
+    const randomSign = getRandomSign(); // случайное мат. действие (+, -, *, %)
+    console.log(`${firstMember} ${randomSign} ${secondMember}`);
+    const trueAnswer = eval(`${firstMember} ${randomSign} ${secondMember}`); // Метод eval() выполняет JavaScript-код, представленный строкой
     const userAnswer = redlineSync.question('Your answer: ');
     if (Number(userAnswer) === trueAnswer) {
       console.log('Correct!');
       i += 1;
     } else {
       console.log('Incorrect!');
-      console.log(`True is ${trueAnswer}`);
       i = 0;
     }
   }
