@@ -1,10 +1,10 @@
 import redlineSync from 'readline-sync';
 import {
   repeatsToWin,
-  getRandomNum,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
+import { getRandomNum } from './utils.js';
 
 const getTrueAnswer = (num) => {
   for (let i = 2; i <= Math.sqrt(num); i += 1) {

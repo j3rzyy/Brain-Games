@@ -1,10 +1,5 @@
 import redlineSync from 'readline-sync';
-
-export const getRandomNum = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+import { getRandomNum } from './utils.js';
 
 export const repeatsToWin = 2; // колличество повторов до победы
 export const maxValue = 100; // ограничение значения максимально возможного рандомного числа

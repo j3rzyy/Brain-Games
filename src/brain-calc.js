@@ -1,10 +1,10 @@
 import redlineSync from 'readline-sync';
 import {
   repeatsToWin,
-  getRandomNum,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
+import { getRandomNum } from './utils.js';
 
 const getRandomSign = () => {
   const totalSign = 4; // каждая цифра соответсвует мат.действию (+, -, *, %)

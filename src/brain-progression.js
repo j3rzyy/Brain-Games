@@ -1,10 +1,10 @@
 import redlineSync from 'readline-sync';
 import {
   repeatsToWin,
-  getRandomNum,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
+import { getRandomNum } from './utils.js';
 
 const getProgress = () => {
   const progress = [];
@@ -18,9 +18,9 @@ const getProgress = () => {
 };
 
 export const brainProgress = () => {
+  console.log('What number is missing in this progression?');
   let i = 0;
   while (i < repeatsToWin) {
-    console.log('What number is missing in this progression?');
     const progress = getProgress();
     const randomMember = getRandomNum(0, progress.length); // выбор случайного члена прогрессии
     const trueAnswer = progress[randomMember];
