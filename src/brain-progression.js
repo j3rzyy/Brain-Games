@@ -1,6 +1,5 @@
 import redlineSync from 'readline-sync';
 import {
-  repeatsToWin,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
@@ -17,22 +16,13 @@ const getProgress = () => {
   return progress;
 };
 
+export const rule = 'What number is missing in this progression?';
+
 export const brainProgress = () => {
-  console.log('What number is missing in this progression?');
-  let i = 0;
-  while (i < repeatsToWin) {
-    const progress = getProgress();
-    const randomMember = getRandomNum(0, progress.length); // выбор случайного члена прогрессии
-    const trueAnswer = progress[randomMember];
-    progress[randomMember] = '..';
-    console.log(`Question: ${progress.toString().split(',').join(' ')}`);
-    const userAnswer = redlineSync.question('Your answer: ');
-    if (Number(userAnswer) === trueAnswer) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      console.log('Incorrect!');
-      i = 0;
-    }
-  }
+  const progress = getProgress();
+  const randomMember = getRandomNum(0, progress.length); // выбор случайного члена прогрессии
+  const trueAnswer = progress[randomMember];
+  progress[randomMember] = '..';
+  const question = progress.toString().split(',').join(' ');
+  return { question, trueAnswer };
 };

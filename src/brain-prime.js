@@ -1,6 +1,4 @@
-import redlineSync from 'readline-sync';
 import {
-  repeatsToWin,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
@@ -15,20 +13,10 @@ const getTrueAnswer = (num) => {
   return 'yes';
 };
 
+export const rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
 export const brainPrime = () => {
-  console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-  let i = 0;
-  while (i < repeatsToWin) {
-    const number = getRandomNum(minValue, maxValue);
-    console.log(`Question: ${number}`);
-    const trueAnswer = getTrueAnswer(number);
-    const userAnswer = redlineSync.question('Your answer: ');
-    if (userAnswer === trueAnswer) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      console.log('Incorrect!');
-      i = 0;
-    }
-  }
+  const question = getRandomNum(minValue, maxValue);
+  const trueAnswer = getTrueAnswer(question);
+  return { question, trueAnswer };
 };

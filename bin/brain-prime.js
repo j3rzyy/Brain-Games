@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { welcome } from '../src/brain-games.js';
-import { brainPrime } from '../src/brain-prime.js'
+import { startGame } from '../src/main.js';
+import { rule, brainPrime } from '../src/brain-prime.js'
 
 welcome();
-brainPrime();
+startGame(rule, brainPrime);

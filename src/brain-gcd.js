@@ -1,6 +1,4 @@
-import redlineSync from 'readline-sync';
 import {
-  repeatsToWin,
   maxValue,
   minValue,
 } from '../src/brain-even.js';
@@ -14,21 +12,12 @@ const getTrueAnswer = (firstVal, secondVal) => { // функция находи�
   return firstVal;
 };
 
-export const getGCD = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  let i = 0;
-  while (i < repeatsToWin) {
-    const firstValue = getRandomNum(minValue, maxValue); // получение первого числа через функцию
-    const secondValue = getRandomNum(minValue, maxValue); // получение второго числа для НОД
-    console.log(`Question: ${firstValue} ${secondValue}`); // вывод в терминал чисел для нахождения НОД
-    const trueAnswer = getTrueAnswer(firstValue, secondValue);
-    const userAnswer = redlineSync.question('Your answer: ');
-    if (Number(userAnswer) === trueAnswer) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      console.log('Incorrect!');
-      i = 0;
-    }
-  }
+export const rule = 'Find the greatest common divisor of given numbers.';
+
+export const brainGCD = () => {
+  const firstValue = getRandomNum(minValue, maxValue); // получение первого числа через функцию
+  const secondValue = getRandomNum(minValue, maxValue); // получение второго числа для НОД
+  const question = (`${firstValue} ${secondValue}`);
+  const trueAnswer = getTrueAnswer(firstValue, secondValue);
+  return { question, trueAnswer };
 };

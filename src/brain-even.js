@@ -1,7 +1,5 @@
-import redlineSync from 'readline-sync';
 import { getRandomNum } from './utils.js';
 
-export const repeatsToWin = 2; // колличество повторов до победы
 export const maxValue = 100; // ограничение значения максимально возможного рандомного числа
 export const minValue = 0;
 
@@ -12,24 +10,10 @@ const isEven = (number) => {
   return 'no';
 }; // функция проверки на четность, возвращает true = 'yes', false = 'no'
 
+export const rule = "Answer 'yes' if number even otherwise answer 'no'.";
+
 export const brainEven = () => {
-  console.log("Answer 'yes' if number even otherwise answer 'no'.");
-  let i = 0;
-  while (i < repeatsToWin) {
-    const randomNum = getRandomNum(minValue, maxValue); // получение рандомного числа
-    console.log(`Question: ${randomNum}`); // вывод рандомного числа тип которого необходимо определить
-    // const userAnswer = redlineSync.question('Your answer: ')
-    // запрос ответа от пользователя БЕЗ проверки ввода
-    let userAnswer = '';
-    do {
-      userAnswer = redlineSync.question('Your answer: ');
-    } while (userAnswer !== 'yes' && userAnswer !== 'no'); // запрос ответа от пользователя C проверкой ввода
-    if (userAnswer === isEven(randomNum)) { // проверка соответствия пользовательского и верного отв
-      console.log('Correct!');
-      i += 1;
-    } else {
-      console.log('Incorrect!');
-      i = 0;
-    }
-  }
+  const question = getRandomNum(minValue, maxValue);
+  const trueAnswer = isEven(question);
+  return { question, trueAnswer };
 };
