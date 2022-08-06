@@ -1,8 +1,19 @@
 brain-games:
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-games.js
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-even.js
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-calc.js
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-gcd.js
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-progression.js
-	@node /home/jerzy/Documents/Project1_BrainGames/bin/brain-prime.js
+	@node bin/brain-games.js
+
+brain-even:
+	@node bin/brain-even.js
+
+brain-prime:
+	@node bin/brain-prime.js
+
+brain-calc:
+	@node bin/brain-calc.js
+
+brain-gcd:
+	@node bin/brain-gcd.js
+
+brain-progression:
+	@node bin/brain-progression.js
+
 	
